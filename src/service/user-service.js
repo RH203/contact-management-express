@@ -1,30 +1,29 @@
-import {validate} from "../validation/validation.js";
-import {registerUserValidation} from "../validation/user-validation.js";
-import {prismaClient} from "../app/database.js";
-import bcrypt from "bcrypt"
+import { validate } from '../validation/validation.js';
+import { registerUserValidation } from '../validation/user-validation.js';
+import { prismaClient } from '../app/database.js';
+import bcrypt from 'bcrypt';
+import {ResponseError} from "../error/response-error.js";
 
-const register = async (request) => {
-    const user = validate(registerUserValidation, request)
+const register = async request => {
+  const user = validate(registerUserValidation, request);
 
-    const countUser = await prismaClient.user.count({
-        where: {username: user.username},
-    })
+  const countUser = await prismaClient.user.count({
+    where: { username: user.username },
+  });
 
-    if (countUser === 1) {
-        throw new ResponseError(400, "User already exists!")
-    }
+  if (countUser === 1) {
+    throw new ResponseError(400, 'User already exists!');
+  }
 
-    user.password = await bcrypt.hash(user.password, 10)
+  user.password = await bcrypt.hash(user.password, 10);
 
-    return prismaClient.user.create({
-        data: user,
-        select:{
-            username: true,
-            name: true,
-        }
+  return prismaClient.user.create({
+    data: user,
+    select: {
+      username: true,
+      name: true,
+    },
+  });
+};
 
-    })
-
-}
-
-export default {register}
+export default { register };

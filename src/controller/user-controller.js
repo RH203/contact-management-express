@@ -1,15 +1,14 @@
-import userService from "../service/user-service.js";
+import userService from '../service/user-service.js';
 
-const register = async  (req, res, next) => {
-    try {
+const register = async (req, res, next) => {
+  try {
     const result = await userService.register(req.body);
     res.status(200).json({
-        data : result
+      data: result,
     });
+  } catch (e) {
+    next(e);
+  }
+};
 
-    }catch (e) {
-        next(e)
-    }
-}
-
-export default {register}
+export default { register };

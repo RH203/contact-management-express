@@ -5,17 +5,18 @@
 Endpoint : POST /api/contacts/:contactId/addresses
 
 Headers :
+
 - Authorization : token
 
 Request Body :
 
 ```json
 {
-  "street" : "Jalan apa",
-  "city" : "Kota apa",
-  "province" : "Provinsi apa",
-  "country" : "Negara apa",
-  "postal_code" : "Kode pos"
+  "street": "Jalan apa",
+  "city": "Kota apa",
+  "province": "Provinsi apa",
+  "country": "Negara apa",
+  "postal_code": "Kode pos"
 }
 ```
 
@@ -23,13 +24,13 @@ Response Body Success :
 
 ```json
 {
-  "data" : {
-    "id" : 1,
-    "street" : "Jalan apa",
-    "city" : "Kota apa",
-    "province" : "Provinsi apa",
-    "country" : "Negara apa",
-    "postal_code" : "Kode pos"
+  "data": {
+    "id": 1,
+    "street": "Jalan apa",
+    "city": "Kota apa",
+    "province": "Provinsi apa",
+    "country": "Negara apa",
+    "postal_code": "Kode pos"
   }
 }
 ```
@@ -38,7 +39,7 @@ Response Body Error :
 
 ```json
 {
-  "errors" : "Country is required" 
+  "errors": "Country is required"
 }
 ```
 
@@ -47,17 +48,18 @@ Response Body Error :
 Endpoint : PUT /api/contacts/:contactId/addresses/:addressId
 
 Headers :
+
 - Authorization : token
 
 Request Body :
 
 ```json
 {
-  "street" : "Jalan apa",
-  "city" : "Kota apa",
-  "province" : "Provinsi apa",
-  "country" : "Negara apa",
-  "postal_code" : "Kode pos"
+  "street": "Jalan apa",
+  "city": "Kota apa",
+  "province": "Provinsi apa",
+  "country": "Negara apa",
+  "postal_code": "Kode pos"
 }
 ```
 
@@ -65,13 +67,13 @@ Response Body Success :
 
 ```json
 {
-  "data" : {
-    "id" : 1,
-    "street" : "Jalan apa",
-    "city" : "Kota apa",
-    "province" : "Provinsi apa",
-    "country" : "Negara apa",
-    "postal_code" : "Kode pos"
+  "data": {
+    "id": 1,
+    "street": "Jalan apa",
+    "city": "Kota apa",
+    "province": "Provinsi apa",
+    "country": "Negara apa",
+    "postal_code": "Kode pos"
   }
 }
 ```
@@ -80,7 +82,7 @@ Response Body Error :
 
 ```json
 {
-  "errors" : "Country is required"
+  "errors": "Country is required"
 }
 ```
 
@@ -89,19 +91,20 @@ Response Body Error :
 Endpoint : GET /api/contacts/:contactId/addresses/:addressId
 
 Headers :
+
 - Authorization : token
 
 Response Body Success :
 
 ```json
 {
-  "data" : {
-    "id" : 1,
-    "street" : "Jalan apa",
-    "city" : "Kota apa",
-    "province" : "Provinsi apa",
-    "country" : "Negara apa",
-    "postal_code" : "Kode pos"
+  "data": {
+    "id": 1,
+    "street": "Jalan apa",
+    "city": "Kota apa",
+    "province": "Provinsi apa",
+    "country": "Negara apa",
+    "postal_code": "Kode pos"
   }
 }
 ```
@@ -110,7 +113,7 @@ Response Body Error :
 
 ```json
 {
-  "errors" : "contact is not found"
+  "errors": "contact is not found"
 }
 ```
 
@@ -119,28 +122,29 @@ Response Body Error :
 Endpoint : GET /api/contacts/:contactId/addresses
 
 Headers :
+
 - Authorization : token
 
 Response Body Success :
 
-```json 
+```json
 {
-  "data" : [
+  "data": [
     {
-      "id" : 1,
-      "street" : "Jalan apa",
-      "city" : "Kota apa",
-      "province" : "Provinsi apa",
-      "country" : "Negara apa",
-      "postal_code" : "Kode pos"
+      "id": 1,
+      "street": "Jalan apa",
+      "city": "Kota apa",
+      "province": "Provinsi apa",
+      "country": "Negara apa",
+      "postal_code": "Kode pos"
     },
     {
-      "id" : 1,
-      "street" : "Jalan apa",
-      "city" : "Kota apa",
-      "province" : "Provinsi apa",
-      "country" : "Negara apa",
-      "postal_code" : "Kode pos"
+      "id": 1,
+      "street": "Jalan apa",
+      "city": "Kota apa",
+      "province": "Provinsi apa",
+      "country": "Negara apa",
+      "postal_code": "Kode pos"
     }
   ]
 }
@@ -150,7 +154,7 @@ Response Body Error :
 
 ```json
 {
-  "errors" : "contact is not found"
+  "errors": "contact is not found"
 }
 ```
 
@@ -159,13 +163,14 @@ Response Body Error :
 Endpoint : DELETE /api/contacts/:contactId/addresses/:addressId
 
 Headers :
+
 - Authorization : token
 
 Response Body Success :
 
 ```json
 {
-  "data" : "OK"
+  "data": "OK"
 }
 ```
 
@@ -173,6 +178,6 @@ Response Body Error :
 
 ```json
 {
-  "errors" : "address is not found"
+  "errors": "address is not found"
 }
 ```
