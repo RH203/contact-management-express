@@ -1,0 +1,5 @@
+.idea/
+docs/
+
+.env/
+__test__/
