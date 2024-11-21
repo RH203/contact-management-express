@@ -5,6 +5,7 @@
 Endpoint: POST /api/users
 
 Request Body:
+
 ```json
 {
   "username": "user",
@@ -13,7 +14,8 @@ Request Body:
 }
 ```
 
-Response Body Success: 
+Response Body Success:
+
 ```json
 {
   "data": {
@@ -24,6 +26,7 @@ Response Body Success:
 ```
 
 Response Body Error:
+
 ```json
 {
   "errors": "Username already registered"
@@ -31,9 +34,11 @@ Response Body Error:
 ```
 
 ## Login User API
+
 Endpoint: POST /api/users/login
 
 Request Body:
+
 ```json
 {
   "username": "user",
@@ -42,6 +47,7 @@ Request Body:
 ```
 
 Response Body Success:
+
 ```json
 {
   "data": {
@@ -51,19 +57,23 @@ Response Body Success:
 ```
 
 Response Body Error:
+
 ```json
 {
   "errors": "Username or password wrong!."
 }
 ```
+
 ## Update User API
 
 Endpoint: PATCH /api/users/current
 
 Headers:
+
 - Authorization: token
 
 Request Body:
+
 ```json
 {
   "name": "name",
@@ -72,16 +82,18 @@ Request Body:
 ```
 
 Response Body Success:
+
 ```json
 {
-    "data": {
-      "username": "new-name",
-      "password": "new-password"
-    }
+  "data": {
+    "username": "new-name",
+    "password": "new-password"
+  }
 }
 ```
 
 Response Body Error:
+
 ```json
 {
   "errors": "Name length max 100!"
