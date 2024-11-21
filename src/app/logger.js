@@ -1,13 +1,8 @@
 import winston from 'winston';
-
-const { combine, timestamp, printf, colorize } = winston.format;
-
-const myFormat = printf(({ level, message, timestamp }) => {
-  return `${timestamp} ${level}: ${message}`;
-});
+import { json } from 'express';
 
 export const logger = winston.createLogger({
   level: 'info',
-  format: combine(colorize(), timestamp(), myFormat),
+  format: winston.format.json(),
   transports: [new winston.transports.Console({})],
 });

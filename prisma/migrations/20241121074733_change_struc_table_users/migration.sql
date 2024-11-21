@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE `users` MODIFY `token_active` DATETIME(3) NULL DEFAULT CURRENT_TIMESTAMP(3);
