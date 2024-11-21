@@ -1,5 +1,7 @@
 .idea/
 docs/
 
-.env/
+.env
 __test__/
+
+node_modules/
