@@ -3,6 +3,8 @@ import { json } from 'express';
 
 export const logger = winston.createLogger({
   level: 'info',
-  format: winston.format.json(),
+  format: winston.format.json({
+    space: 1,
+  }),
   transports: [new winston.transports.Console({})],
 });
