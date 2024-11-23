@@ -9,15 +9,11 @@ const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY;
 
 // Create token
 const generateToken = (user, expiresIn = '24h') => {
-  return jwt.sign(
-    { id: user.id, username: user.username },
-    JWT_SECRET_KEY,
-    { expiresIn },
-  );
+  return jwt.sign({ username: user.username }, JWT_SECRET_KEY, { expiresIn });
 };
 
 // Verif token
-const verifyToken = (token) => {
+const verifyToken = token => {
   try {
     return jwt.verify(token, JWT_SECRET_KEY);
   } catch (err) {

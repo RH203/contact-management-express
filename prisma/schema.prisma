@@ -17,7 +17,7 @@ model User {
   username String    @id @db.VarChar(100)
   password String    @db.VarChar(100)
   name     String    @db.VarChar(100)
-  token    String?   @db.VarChar(255)
+  role     Role      @default(User)
   contacts Contact[]
 
   @@map("users")
@@ -47,4 +47,9 @@ model Address {
   contactId   Int
 
   @@map("address")
+}
+
+enum Role {
+  User
+  Admin
 }
